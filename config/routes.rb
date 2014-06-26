@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get '/products', to: 'products#index'
   get '/songs', to: 'songs#index'
 
+  # Path with products/id go to show method
+  get '/products/:id', to: 'products#show'
+
+  get '/songs/:id', to: 'songs#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
