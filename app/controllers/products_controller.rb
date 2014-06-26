@@ -30,6 +30,25 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  # ProductsController#update method
+  def update
+    # Get the product to update
+    @product = Product.find(params[:id])
+
+    # Using strong params update this product
+    # Product#update method
+    if @product.update(product_params)
+      redirect_to @product, notice: "You have updated the #{@product.name}"
+    else
+      # No worky, try again, show me the form you.
+      render :edit
+    end
+  end
+
   private
 
   # Define which params are allowed to be used to create a Product

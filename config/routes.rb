@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   get '/products/:id', to: 'products#show', as: 'product'
   get '/songs/:id', to: 'songs#show', as: 'song'
 
+  # HTTP GET Request to get the FORM for updating ONE EXISTING product
+  get '/products/:id/edit', to: 'products#edit', as: 'edit_product'
+  patch '/products/:id', to: 'products#update'
+
+  get '/songs/:id/edit', to: 'songs#edit', as: 'edit_song'
+  patch '/songs/:id', to: 'songs#update'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
