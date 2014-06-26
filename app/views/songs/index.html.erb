@@ -1,6 +1,4 @@
-<ul>All Songs
-<% @songs.each do |song| %>
-  <li>
-  Song title: <%= link_to(song.title, song_path(song.id)) %> | Song Artist: <%= song.artist %> | Duration: <%= song.duration %> | Price <%= song.price %> | <%= link_to('Edit', edit_song_path(song)) %> | <%= link_to 'Destroy', song, method: :delete, data: {confirm: 'Are you sure?'} %></li>
-<% end %>
+<ul>Songs
+<%= render partial: "song", collection: @songs %>
 </ul>
+<h3><%= link_to 'Create a new song', new_song_path %></h3>

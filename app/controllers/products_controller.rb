@@ -20,8 +20,8 @@ class ProductsController < ApplicationController
   def create
 
     # Instantitate a new Product instance from the form fields with libe in the params hash
-    product = Product.new(product_params)
-    if product.save
+    @product = Product.new(product_params)
+    if @product.save
       # It saved, so lets see this new product
       # render :show, status: :created, location: @product
       redirect_to products_path
