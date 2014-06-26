@@ -1,31 +1,38 @@
 Rails.application.routes.draw do
 
-  # GET HTTP Method
-  # Path is '/products'
-  # Route to the ProductsController#index
-  get '/products', to: 'products#index'
-  get '/songs', to: 'songs#index'
+  # creates all the routes for Product resource
+  resources :products, :songs
 
-  # Create
-  # Path with products/new got new action
-  get '/products/new', to: 'products#new'
-  get '/songs/new', to: 'songs#new'
+  # # GET HTTP Method
+  # # Path is '/products'
+  # # Route to the ProductsController#index
+  # get '/products', to: 'products#index'
+  # get '/songs', to: 'songs#index'
 
-  # When you post it will go the create action
-  post '/products', to: 'products#create'
-  post '/songs', to: 'songs#create'
+  # # Create
+  # # Path with products/new got new action
+  # get '/products/new', to: 'products#new'
+  # get '/songs/new', to: 'songs#new'
 
-  # Path with products/id go to show method
-  get '/products/:id', to: 'products#show', as: 'product'
-  get '/songs/:id', to: 'songs#show', as: 'song'
+  # # When you post it will go the create action
+  # post '/products', to: 'products#create'
+  # post '/songs', to: 'songs#create'
 
-  # HTTP GET Request to get the FORM for updating ONE EXISTING product
-  get '/products/:id/edit', to: 'products#edit', as: 'edit_product'
-  patch '/products/:id', to: 'products#update'
+  # # Path with products/id go to show method
+  # get '/products/:id', to: 'products#show', as: 'product'
+  # get '/songs/:id', to: 'songs#show', as: 'song'
 
-  get '/songs/:id/edit', to: 'songs#edit', as: 'edit_song'
-  patch '/songs/:id', to: 'songs#update'
+  # # HTTP GET Request to get the FORM for updating ONE EXISTING product
+  # get '/products/:id/edit', to: 'products#edit', as: 'edit_product'
+  # patch '/products/:id', to: 'products#update'
 
+  # get '/songs/:id/edit', to: 'songs#edit', as: 'edit_song'
+  # patch '/songs/:id', to: 'songs#update'
+
+  # # HTTP DELETE Request
+  # delete '/products/:id', to: 'products#destroy'
+
+  # delete '/songs/:id', to: 'songs#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

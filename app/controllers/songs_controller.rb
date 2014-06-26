@@ -39,6 +39,12 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy
+    @song = Song.find(params[:id])
+    @song.destroy
+    redirect_to songs_path, notice: "You have deleted the song"
+  end
+
   private
 
   # Define which params are allowed to be used to create a song
