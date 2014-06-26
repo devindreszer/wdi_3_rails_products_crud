@@ -29,6 +29,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'pry-rails'
+  gem 'faker'
 
   # Turn off verbose logging of asset requests
   gem 'quiet_assets'
