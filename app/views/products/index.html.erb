@@ -1,5 +1,7 @@
 <ul>All Products
 <% @products.each do |product| %>
-  <li>Name is <%= product.name %>, Price is <%= product.price %></li>
+  <!-- link_to viw helper will create an anchor tag with the product.name
+  and the URL that is the path to the individul product -->
+  <li>Name is <%= link_to(product.name, product_path(product.id)) %>, Price is <%= product.price %></li>
 <% end %>
 </ul>
