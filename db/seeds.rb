@@ -14,6 +14,20 @@ product_count.times do |i|
   Product.create!(
     name: "Product #{i}",
     description: "Description #{i}",
-    price: rand(100) + (rand (100)/100.to_f).round(2)
+    price: rand(100) + (rand(100)/100.to_f).round(2)
   )
+end
+
+Song.delete_all
+
+puts "Creating 20 Songs"
+song_count = 20
+
+song_count.times do |i|
+  Song.create!(
+    title: "Song #{i}",
+    artist: "Artist #{i}",
+    duration: rand(360),
+    price: rand(100) + (rand(100)/100.to_f).round(2)
+    )
 end
