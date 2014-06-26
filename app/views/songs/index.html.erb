@@ -1,0 +1,5 @@
+<ul>All Songs
+<% @songs.each do |song| %>
+  <li>Song title: <%= song.title %> | Song Artist: <%= song.artist %> | Duration: <%= song.duration %> | Price <%= song.price %></li>
+<% end %>
+</ul>
